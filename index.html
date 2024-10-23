@@ -1,0 +1,24 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Simple Flask App</title>
+</head>
+<body>
+    <h1>Data Input and Display</h1>
+    <form id="dataForm" method="POST">
+        <input type="text" name="data" id="data" placeholder="Enter some data" required>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Data from Database:</h2>
+    <ul id="dataList">
+        {% for item in data %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
